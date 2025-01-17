@@ -1,0 +1,195 @@
+<meta name='viewport' content='width=device-width, initial-scale=1'/><marquee behavior="scroll" direction="left">
+CREATED BY AKASH SINGH</marquee>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MAXAS - Study Material</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>MAXAS</h1>
+    <p>Best Study Material for Class 9 and 10</p>
+    <p>Created by Akash Bhai</p>
+  </header>
+
+  <main>
+    <section id="materials">
+      <h2>Study Materials</h2>
+      <div id="material-list">
+        <!-- Uploaded materials will appear here -->
+      </div>
+    </section>
+
+    <!-- 🅰️ Button -->
+    <button id="toggle-upload">🅰️</button>
+
+    <section id="upload-section" class="hidden">
+      <h2>Admin Upload Section</h2>
+      <form id="upload-form">
+        <label for="password">Enter Password:</label>
+        <input type="password" id="password" placeholder="Enter upload password" required>
+        
+        <label for="material-title">Material Title:</label>
+        <input type="text" id="material-title" placeholder="Enter title of the material" required>
+        
+        <label for="material-type">Material Type:</label>
+        <select id="material-type">
+          <option value="pdf">PDF</option>
+          <option value="link">Link</option>
+        </select>
+        
+        <label for="material-content">Material (PDF Link or URL):</label>
+        <input type="text" id="material-content" placeholder="Enter link or upload PDF" required>
+        
+        <button type="submit">Upload</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Akash Bhai. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html><style>body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 20px;
+  background-color: #4CAF50;
+  color: white;
+}
+
+h1 {
+  margin: 0;
+}
+
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+#materials {
+  background-color: #fff;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+#upload-section {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.hidden {
+  display: none;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+form input, form select, form button {
+  display: block;
+  width: 100%;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+form button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #45a049;
+}
+
+button#toggle-upload {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button#toggle-upload:hover {
+  background-color: #0056b3;
+}
+
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}</style><script>// Handle the visibility of the upload section
+document.getElementById("toggle-upload").addEventListener("click", function () {
+  const uploadSection = document.getElementById("upload-section");
+  if (uploadSection.classList.contains("hidden")) {
+    uploadSection.classList.remove("hidden");
+  } else {
+    uploadSection.classList.add("hidden");
+  }
+});
+
+// Handle form submission for uploading materials
+document.getElementById("upload-form").addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const password = document.getElementById("password").value;
+  const title = document.getElementById("material-title").value;
+  const type = document.getElementById("material-type").value;
+  const content = document.getElementById("material-content").value;
+
+  if (password !== "224068123420") {
+    alert("Incorrect password! You cannot upload.");
+    return;
+  }
+
+  const materialList = document.getElementById("material-list");
+  const materialItem = document.createElement("div");
+  materialItem.className = "material-item";
+
+  materialItem.innerHTML = `
+    <h3>${title}</h3>
+    <p>Type: ${type === "pdf" ? "PDF" : "Link"}</p>
+    ${
+      type === "pdf"
+        ? `<a href="${content}" target="_blank">Download PDF</a>`
+        : `<a href="${content}" target="_blank">Visit Link</a>`
+    }
+  `;
+
+  materialList.appendChild(materialItem);
+
+  // Clear the form
+  document.getElementById("upload-form").reset();
+
+  alert("Material uploaded successfully!");
+});</script>
