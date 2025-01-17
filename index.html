@@ -13,7 +13,7 @@ CREATED BY AKASH SINGH</marquee>
   <header>
     <h1>MAXAS</h1>
     <p>Best Study Material for Class 9 and 10</p>
-    <p>Created by Akash Bhai</p>
+    <p>Created by AKASH BHAI</p>
   </header>
 
   <main>
@@ -25,7 +25,7 @@ CREATED BY AKASH SINGH</marquee>
     </section>
 
     <!-- 🅰️ Button -->
-    <button id="toggle-upload">🅰️</button>
+    <button id="toggle-upload">🥳</button>
 
     <section id="upload-section" class="hidden">
       <h2>Admin Upload Section</h2>
@@ -41,8 +41,28 @@ CREATED BY AKASH SINGH</marquee>
           <option value="pdf">PDF</option>
           <option value="link">Link</option>
         </select>
+
+<!--pdf upload section-->
+        <div
+          id="pdf-upload-section">
+          <label
+            for "pdf-upload">upload pdf link :</label>
+<input type="file"
+  id="pdf-upload" accept="application/pdf">
+          <p>Preloaded PDF Link: 
+            <a href="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/592050102777813400.pdf" target="_blank">
+              View Preloaded PDF
+            </a>
+          </p>
+        </div>
+        !-- Link Upload Section -->
+        <div id="link-upload-section" class="hidden">
+          <label for="material-content">Material Link:</label>
+          <input type="text" id="material-content" value="https://dxixtlyravvxx.cloudfront.net/540admin_v1/file_manager/pdf/592050102777813400.pdf">
+        </div>
+
         
-        <label for="material-content">Material (PDF Link or URL):</label>
+        <label for="material-content">Material (Link or URL):</label>
         <input type="text" id="material-content" placeholder="Enter link or upload PDF" required>
         
         <button type="submit">Upload</button>
@@ -167,7 +187,7 @@ document.getElementById("upload-form").addEventListener("submit", function (e) {
   const type = document.getElementById("material-type").value;
   const content = document.getElementById("material-content").value;
 
-  if (password !== "224068123420") {
+  if (password !== "252525") {
     alert("Incorrect password! You cannot upload.");
     return;
   }
